@@ -1,0 +1,1 @@
+SAMPLICATE_ARGS='-S -c /etc/samplicator/samplicator.conf -f -d 0'

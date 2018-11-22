@@ -1,0 +1,20 @@
+#
+# /etc/systemd/system/samplicator.service
+#
+# a startup file for samplicator. See INSTALL.md
+#
+# 19.4.2017, Ch. Bueche <bueche@netnea.com>
+#
+
+[Unit]
+Description=Samplicator
+After=network.target
+
+[Service]
+EnvironmentFile=/etc/samplicator/defaults
+Type=forking
+ExecStart=/usr/bin/samplicate $SAMPLICATE_ARGS
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
